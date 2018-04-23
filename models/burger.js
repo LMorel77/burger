@@ -22,9 +22,11 @@ var burger = {
     },
 
     // Function to update burger
-    update: function (tableData, condition, callBack) {
+    update: function (condition, callBack) {
 
-        orm.updateOne("burgers", tableData, condition, function (response) {
+        console.log("\n >> burger.update 'condition' = ", condition);
+
+        orm.updateOne("burgers", condition, function (response) {
             callBack(response);
         });
 

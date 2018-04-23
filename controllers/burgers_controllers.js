@@ -33,11 +33,10 @@ router.post('/api/burgers', function (request, response) {
 });
 
 // Put Route
-router.put('/', function (request, response) {
+router.put('/api/burgers/:id', function (request, response) {
 
     burger.update(
-        { devoured: request.body.devoured },
-        { id: request.body.burgerId }, function (result) {
+        { id: request.params.id }, function (result) {
 
             if (result.changedRows === 0) return response.status(404).end();
             console.log("\n >> router.put(...) succeeded!");

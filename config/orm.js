@@ -36,14 +36,14 @@ var orm = {
 
     },
 
-    updateOne: function (tableName, tableData, condition, callBack) {
+    updateOne: function (tableName, condition, callBack) {
 
         var queryString = "UPDATE " + tableName + " SET ? WHERE ?";
 
         console.log("\n >> orm.updateOne() queryString: ", queryString);
 
-        // Update record SQL query (UPDATE ?? SET ?? WHERE ?)
-        sqlCxn.query(queryString, [tableData, condition], function (error, result) {
+        // Update record SQL query (UPDATE burgers SET ?? WHERE ?)
+        sqlCxn.query(queryString, [{ devoured: 1}, condition], function (error, result) {
 
             if (error) throw error;
             callBack(result);

@@ -20,7 +20,26 @@ $("#submit").on("click", function(event) {
 
 });
 
+$(".devourButton").on("click", function(event) {
 
+    event.preventDefault();
+
+    var burgerId = $(this).data("id"); 
+    console.log("\nDevour button id: ", burgerId);
+
+    $.ajax("/api/burgers/" + burgerId, {
+        method: 'PUT',
+        data: burgerId
+    }).then(function(error) {
+
+        if (error) throw error;
+        console.log("\n >> Burger devoured!\n");
+        location.reload();
+
+    });
+
+
+});
 
 
 
