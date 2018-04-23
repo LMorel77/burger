@@ -17,7 +17,7 @@ nav {
 }
 
 /* Panel Styling */
-#formPanel {
+.formPanel {
     margin-top: 60px;
 }
 
@@ -26,6 +26,11 @@ nav {
     background-color: goldenrod;
     font-family: 'Anton', sans-serif;
     text-align: center;
+}
+
+#formPanelHeader {
+    /* background: linear-gradient(to right, rgb(210,168,47), rgb(247,116,91)); */
+    background-color: #CC202E;
 }
 
 .panel-title {
@@ -44,7 +49,8 @@ textarea {
 }
 
 button {
-    background: linear-gradient(to right, rgb(210,168,47), rgb(247,116,91));
+    /* background: linear-gradient(to right, rgb(210,168,47), rgb(247,116,91)); */
+    background-color: #CC202E;
     border-radius: 27px;
     color: white;
     cursor: pointer;

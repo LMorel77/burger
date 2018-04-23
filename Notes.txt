@@ -1,6 +1,6 @@
 MVC Design
 
-(SERVER) server.js 		> ./controllers/catsControllers.js
+5) (SERVER) server.js 		> ./controllers/catsControllers.js
 
 	
 var bodyParser = require("body-parser");
@@ -9,7 +9,7 @@ var bodyParser = require("body-parser");
     *** var routes = require("./controllers/catsController.js");
 
 
-(ROUTER) catsController.js 	> ./models/cat.js
+4) (ROUTER) catsController.js 	> ./models/cat.js
 
 	var express = require("express");
 
@@ -21,18 +21,18 @@ var router = express.Router();
 	module.exports = router;
 
 
-(MODEL) cat.js			> ./config/orm.js
+3) (MODEL) cat.js			> ./config/orm.js
 
     ***	var orm = require("../config/orm.js");
 
 	module.exports = cat;
 
 
-(ORM) orm.js			> ./config/connection.js
+2) (ORM) orm.js			> ./config/connection.js
 
     *** var connection = require("../config/connection.js");
 
 	module.exports = orm;
 
 
-(SQL Connection) connection.js
+1) (SQL Connection) connection.js

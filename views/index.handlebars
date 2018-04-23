@@ -6,7 +6,7 @@
 
     <div class="row">
 
-        {{!-- Burger Order Pane --}}
+        {{!-- Burger Order\Cart Panel --}}
         <div class="col-md-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -22,15 +22,15 @@
             </div>
         </div>
 
-        {{!-- Burger Order Form --}}
+        {{!-- Burger Order Form Panel --}}
         <div class="col-md-4">
-            <div class="panel panel-default" id="formPanel">
-                <div class="panel-heading">
+            <div class="panel panel-default formPanel">
+                <div class="panel-heading" id="formPanelHeader">
                     <h3 class="panel-title">Burger Order Form</h3>
                 </div>
                 <div class="panel-body">
                     <form method="post" enctype="text/plain">
-                        <textarea id="burger" name="Burger" placeholder="Place your burger order here. Click 'Submit' when done."></textarea>
+                        <textarea id="burgerName" name="burger" placeholder="Place your burger order here. Click 'Submit' when done."></textarea>
                         <div class="submitButton">
                             <button type="submit" id="submit">Submit</button>
                         </div>
