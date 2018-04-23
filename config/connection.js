@@ -1,15 +1,23 @@
 // Importing mySQL node package
 var mySql = require('mysql');
+var sqlCxn;
 
 // SQL database connection info
-var sqlCxn = mySql.createConnection({
+if (process.env.JAWSB_URL) {
+    sqlCxn = mySql.createConnection(process.env.JAWSB_URL);
+}
+else {
 
-    host: 'localhost',
-    user: 'root',
-    password: 'root',
-    database: 'burgers_db'
+    sqlCxn = mySql.createConnection({
 
-});
+        host: 'localhost',
+        user: 'root',
+        password: 'root',
+        database: 'burgers_db'
+
+    });
+
+}
 
 // Connecting to SQL server and database
 sqlCxn.connect(function (error) {
