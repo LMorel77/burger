@@ -24,8 +24,6 @@ var burger = {
     // Function to update burger
     update: function (condition, callBack) {
 
-        console.log("\n >> burger.update 'condition' = ", condition);
-
         orm.updateOne("burgers", condition, function (response) {
             callBack(response);
         });

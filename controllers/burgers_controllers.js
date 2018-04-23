@@ -25,7 +25,7 @@ router.post('/api/burgers', function (request, response) {
     burger.create({ burger_name: request.body.name }, function (result) {
 
         // Send back ID of new burger
-        console.log("\n >> router.post(...) succeeded!");
+        console.log("\n >> router.post(...) succeeded!\n");
         response.json({ id: result.insertId });
 
     });
@@ -39,7 +39,7 @@ router.put('/api/burgers/:id', function (request, response) {
         { id: request.params.id }, function (result) {
 
             if (result.changedRows === 0) return response.status(404).end();
-            console.log("\n >> router.put(...) succeeded!");
+            console.log("\n >> router.put(...) succeeded!\n");
             response.status(200).end();
 
         });

@@ -8,8 +8,6 @@ var orm = {
 
         var queryString = "SELECT * FROM " + tableName;
 
-        console.log("\n >> orm.selectAll() queryString: ", queryString);
-
         // Retrieve all records SQL query (SELECT * FROM ??)
         sqlCxn.query(queryString, function (error, data) {
 
@@ -24,8 +22,6 @@ var orm = {
 
         var queryString = "INSERT INTO " + tableName + " SET ?";
 
-        console.log("\n >> orm.insertOne() queryString: ", queryString);
-
         // Add new record SQL query (INSERT INTO ?? SET ??)
         sqlCxn.query(queryString, tableData, function (error, result) {
 
@@ -39,8 +35,6 @@ var orm = {
     updateOne: function (tableName, condition, callBack) {
 
         var queryString = "UPDATE " + tableName + " SET ? WHERE ?";
-
-        console.log("\n >> orm.updateOne() queryString: ", queryString);
 
         // Update record SQL query (UPDATE burgers SET ?? WHERE ?)
         sqlCxn.query(queryString, [{ devoured: 1}, condition], function (error, result) {

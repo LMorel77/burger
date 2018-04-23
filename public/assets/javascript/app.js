@@ -13,7 +13,6 @@ $("#submit").on("click", function(event) {
         data: newBurger
     }).then(function() {
 
-        console.log("\n >> Added new burger to database");
         location.reload();
 
     });
@@ -25,7 +24,6 @@ $(".devourButton").on("click", function(event) {
     event.preventDefault();
 
     var burgerId = $(this).data("id"); 
-    console.log("\nDevour button id: ", burgerId);
 
     $.ajax("/api/burgers/" + burgerId, {
         method: 'PUT',
@@ -33,7 +31,6 @@ $(".devourButton").on("click", function(event) {
     }).then(function(error) {
 
         if (error) throw error;
-        console.log("\n >> Burger devoured!\n");
         location.reload();
 
     });
