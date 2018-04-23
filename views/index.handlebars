@@ -1,0 +1,59 @@
+<div class="container">
+    <nav>Eat-Da-Burger!</nav>
+</div>
+
+<div class="container">
+
+    <div class="row">
+
+        {{!-- Burger Order Pane --}}
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Burger Order</h3>
+                </div>
+                <div class="panel-body" id="burgerOrder">
+                    <ul>
+                        {{#each burgers}}
+                        <li>{{burger_name}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        {{!-- Burger Order Form --}}
+        <div class="col-md-4">
+            <div class="panel panel-default" id="formPanel">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Burger Order Form</h3>
+                </div>
+                <div class="panel-body">
+                    <form method="post" enctype="text/plain">
+                        <textarea id="burger" name="Burger" placeholder="Place your burger order here. Click 'Submit' when done."></textarea>
+                        <div class="submitButton">
+                            <button type="submit" id="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        {{!-- Burgers Devoured Pane --}}
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Devoured</h3>
+                </div>
+                <div class="panel-body" id="devoured">
+                    <ul>
+                        {{#each burgers}}
+                        <li>{{burger_name}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

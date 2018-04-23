@@ -1,0 +1,38 @@
+MVC Design
+
+(SERVER) server.js 		> ./controllers/catsControllers.js
+
+	
+var bodyParser = require("body-parser");
+	var express = require("express");
+
+    *** var routes = require("./controllers/catsController.js");
+
+
+(ROUTER) catsController.js 	> ./models/cat.js
+
+	var express = require("express");
+
+var router = express.Router();
+	var router = express.Router();
+
+    ***	var cat = require("../models/cat.js");
+
+	module.exports = router;
+
+
+(MODEL) cat.js			> ./config/orm.js
+
+    ***	var orm = require("../config/orm.js");
+
+	module.exports = cat;
+
+
+(ORM) orm.js			> ./config/connection.js
+
+    *** var connection = require("../config/connection.js");
+
+	module.exports = orm;
+
+
+(SQL Connection) connection.js
