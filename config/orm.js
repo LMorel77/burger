@@ -6,7 +6,7 @@ var orm = {
 
     selectAll: function (tableName, callBack) {
 
-        var queryString = "SELECT * FROM " + tableName;
+        var queryString = "SELECT * FROM " + tableName + " ORDER BY burger_name";
 
         // Retrieve all records SQL query (SELECT * FROM ??)
         sqlCxn.query(queryString, function (error, data) {

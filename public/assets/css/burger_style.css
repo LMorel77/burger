@@ -18,6 +18,11 @@ nav {
 
 /* Panel Styling */
 
+#burgerOrder, #devoured {
+    height: 345px;
+    overflow: auto;
+}
+
 .devourButton {
     background-color: goldenrod;
     border-radius: 27px;
