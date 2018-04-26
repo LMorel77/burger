@@ -9,10 +9,7 @@ router.get('/', function (request, response) {
 
     burger.all(function (data) {
 
-        var hbsObject = {
-            burgers: data
-        };
-        console.log("\n >> router.get(...) 'data':\n\n", data);
+        var hbsObject = { burgers: data };
         response.render("index", hbsObject);
 
     });
@@ -25,7 +22,6 @@ router.post('/api/burgers', function (request, response) {
     burger.create({ burger_name: request.body.name }, function (result) {
 
         // Send back ID of new burger
-        console.log("\n >> router.post(...) succeeded!\n");
         response.json({ id: result.insertId });
 
     });
@@ -35,12 +31,21 @@ router.post('/api/burgers', function (request, response) {
 // Put Route
 router.put('/api/burgers/:id', function (request, response) {
 
-    burger.update(
-        { id: request.params.id }, function (result) {
+    burger.update({ id: request.params.id }, function (result) {
 
             if (result.changedRows === 0) return response.status(404).end();
-            console.log("\n >> router.put(...) succeeded!\n");
             response.status(200).end();
+
+        });
+
+});
+
+// Delete Route
+router.delete('/api/burgers', function (request, response) {
+
+    burger.delete({ devoured: true }, function (result) {
+
+            response.end();
 
         });
 

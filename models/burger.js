@@ -28,6 +28,15 @@ var burger = {
             callBack(response);
         });
 
+    },
+
+    // Function to delete devoured burgers
+    delete: function (condition, callBack) {
+
+        orm.deleteRow("burgers", condition, function (response) {
+            callBack(response);
+        });
+
     }
 
 }

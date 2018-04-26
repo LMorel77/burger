@@ -22,7 +22,7 @@ var orm = {
 
         var queryString = "INSERT INTO " + tableName + " SET ?";
 
-        // Add new record SQL query (INSERT INTO ?? SET ??)
+        // Add new record SQL query (INSERT INTO ?? SET ?)
         sqlCxn.query(queryString, tableData, function (error, result) {
 
             if (error) throw error;
@@ -36,8 +36,23 @@ var orm = {
 
         var queryString = "UPDATE " + tableName + " SET ? WHERE ?";
 
-        // Update record SQL query (UPDATE burgers SET ?? WHERE ?)
+        // Update record SQL query (UPDATE burgers SET ? WHERE ?)
         sqlCxn.query(queryString, [{ devoured: 1}, condition], function (error, result) {
+
+            if (error) throw error;
+            callBack(result);
+
+        });
+
+    },
+
+    // DELETE FROM `table_name` [WHERE condition];
+    deleteRow: function (tableName, condition, callBack) {
+
+        var queryString = "DELETE FROM " + tableName + " WHERE ?";
+
+        // Delete record SQL query (DELETE FROM burgers WHERE ?)
+        sqlCxn.query(queryString, [condition], function (error, result) {
 
             if (error) throw error;
             callBack(result);

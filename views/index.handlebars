@@ -16,11 +16,16 @@
                     <table>
                         {{#each burgers}} {{#unless devoured}}
                         <tr>
-                        <td style="width: 227px">{{burger_name}}</td>
-                        <td><button class="devourButton" data-devoured="No" data-id="{{id}}">Devour</button></td>
+                            <td style="width: 227px">{{burger_name}}</td>
+                            <td>
+                                <button class="devourButton" data-devoured="No" data-id="{{id}}">Devour</button>
+                            </td>
                         </tr>
                         {{/unless}} {{/each}}
                     </table>
+                </div>
+                <div class="panel-footer">
+                    When available, click on 'devour' to consume your burger.
                 </div>
             </div>
         </div>
@@ -52,10 +57,15 @@
                     <table>
                         {{#each burgers}} {{#if devoured}}
                         <tr>
-                        <td style="width: 227px">{{burger_name}}</td>
+                            <td style="width: 227px">{{burger_name}}</td>
                         </tr>
                         {{/if}} {{/each}}
                     </table>
+                </div>
+                <div class="panel-footer">
+                    <div class="clearButton">
+                        <button>Clear</button>
+                    </div>
                 </div>
             </div>
         </div>
