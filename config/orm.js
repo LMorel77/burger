@@ -1,7 +1,7 @@
 // Importing SQL connection settings
 var sqlCxn = require('../config/connection.js');
 
-// ORM object containing SQL query functions as keys
+// ORM object containing SQL query functions within object keys
 var orm = {
 
     selectAll: function (tableName, callBack) {
